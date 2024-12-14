@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="/css/dark-style.css">
+    <script>
+        function showConfirmation() {
+            alert("Multumim ca sunteti interesat/a de serviciile noastre, va vom contacta cat mai curand posibil!");
+        }
+    </script>
+</head>
+<body>
+    <h1>Contact</h1>
+
+    <div class="buttons">
+        <a href="/acasa">Acasa</a>
+        <a href="/catalog">Catalog</a>
+        <a href="/contact">Contact</a>
+    </div>
+
+    <div class="contact-form">
+        <form th:action="@{/contact/send}" method="post" onsubmit="showConfirmation()">
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name" required><br><br>
+
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required><br><br>
+
+            <label for="message">Message:</label><br>
+            <textarea id="message" name="message" rows="5" required></textarea><br><br>
+
+            <button type="submit">Send</button>
+        </form>
+    </div>
+
+    <footer>
+        &copy; 2024 SC CONST PETER SRL. All rights reserved.
+    </footer>
+</body>
+</html>
